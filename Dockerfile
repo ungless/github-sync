@@ -3,7 +3,7 @@ FROM alpine
 LABEL \
   "name"="GitHub Repo Sync" \
   "homepage"="https://github.com/marketplace/actions/github-sync" \
-  "repository"="https://github.com/repo-sync/github-sync" \
+  "repository"="https://github.com/ungless/github-sync" \
   "maintainer"="Wei He <github@weispot.com>"
 
 RUN apk add --no-cache git openssh-client && \

@@ -25,8 +25,7 @@ echo "BRANCHES=$BRANCH_MAPPING"
 
 git config --unset-all http."https://github.com/".extraheader
 git remote set-url origin "https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/$GITHUB_REPOSITORY"
-git fetch tmp_upstream
-git pull tmp_upstream master
+git pull $UPSTREAM_REPO master
 git rm -r .github/
 git commit -m "AUTOSYNC: removed ee/"
 echo "Committed removed directories"

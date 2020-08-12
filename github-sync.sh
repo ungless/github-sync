@@ -33,6 +33,7 @@ rm -rf .github
 rm -rf ee/
 git add .
 git commit -m "AUTOSYNC: removed ee/"
+echo "Committed removed directories"
 git push origin "refs/remotes/tmp_upstream/${BRANCH_MAPPING%%:*}:refs/heads/${BRANCH_MAPPING#*:}" --force
 git remote rm tmp_upstream
 git remote --verbose

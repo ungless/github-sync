@@ -29,6 +29,7 @@ git remote add tmp_upstream "$UPSTREAM_REPO"
 git fetch tmp_upstream
 git remote --verbose
 git checkout master tmp_upstream/master
+echo "Checkout master"
 rm -rf .github
 rm -rf ee/
 git add .

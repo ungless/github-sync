@@ -25,20 +25,9 @@ echo "BRANCHES=$BRANCH_MAPPING"
 
 git config --unset-all http."https://github.com/".extraheader
 git remote set-url origin "https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/$GITHUB_REPOSITORY"
-
-git config --global user.email "max@posthog.com"
-git config --global user.name "Max Ungless"
-
-git clone $UPSTREAM_REPO upstream
-cd upstream
-git rm -r .github/
-git commit -m "AUTOSYNC: removed ee/"
-echo "Committed removed directories"
-cd ..
-
 git remote add tmp_upstream "$UPSTREAM_REPO"
 git fetch tmp_upstream
 git remote --verbose
-git push origin "refs/remotes/tmp_upstream/${BRANCH_MAPPING%%:*}:refs/heads/${BRANCH_MAPPING#*:}" --force
+git push origin "refs/remotes/tmp_upstream/${BRANCH_MAPPING%%:*}:refs/heads/${BRANCH_MAPPING#*:}" --follow-tags --force
 git remote rm tmp_upstream
 git remote --verbose

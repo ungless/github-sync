@@ -28,7 +28,7 @@ git remote set-url origin "https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/$GITHU
 git remote add tmp_upstream "$UPSTREAM_REPO"
 git fetch tmp_upstream
 git remote --verbose
-git pull $GITHUB_REPOSITORY origin/master
+git pull origin master
 rm -rf .github
 rm -rf ee/
 git add .

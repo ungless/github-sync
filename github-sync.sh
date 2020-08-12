@@ -25,6 +25,10 @@ echo "BRANCHES=$BRANCH_MAPPING"
 
 git config --unset-all http."https://github.com/".extraheader
 git remote set-url origin "https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/$GITHUB_REPOSITORY"
+
+git config --global user.email "max@posthog.com"
+git config --global user.name "Max Ungless"
+
 git clone $UPSTREAM_REPO upstream
 cd upstream
 git rm -r .github/
